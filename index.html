@@ -5,86 +5,57 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 		<title>Portofolio | Daru Prasetiyo</title>
 		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-		<script src="https://cdn.tailwindcss.com/3.4.17"></script>
-		<style>
-			:root{--bg:#F1EEFF;--card:#fff;--ink:#000;--sh:#000;
-			--a1:#FFD93D;
-			--a2:#FF6B9D;
-			--a3:#4D96FF;
-			--a4:#6BCB77;
-			box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-			@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14121F;--card:#221F33;--ink:#F5F5F5;--sh:#F5F5F5}}
-			:root[data-theme="dark"]{--bg:#14121F;--card:#221F33;--ink:#F5F5F5;--sh:#F5F5F5}
-
-			html{scroll-behavior:smooth;scroll-padding-top:5rem}
-			body{background:var(--bg);color:var(--ink);font-family:'Space Grotesk',system-ui,sans-serif;transition:background .2s,color .2s}
-			.nb{background:var(--card);border:3px solid var(--ink);box-shadow:6px 6px 0 var(--sh)}
-			.nb-btn{display:inline-block;border:3px solid var(--ink);box-shadow:4px 4px 0 var(--sh);font-weight:700;color:#000;transition:transform .1s,box-shadow .1s}
-			.nb-btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--sh)}
-			.nb-btn:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--sh)}
-			.tag{display:inline-block;border:2px solid var(--ink);background:var(--a1);color:#000;font-weight:700;padding:2px 10px;font-size:.8rem}
-			.h2{display:inline-block;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:700;border:3px solid var(--ink);box-shadow:5px 5px 0 var(--sh);padding:.1em .5em;background:var(--a1);color:#000;transform:rotate(-1.5deg)}
-			.bar{height:18px;border:2px solid var(--ink);background:var(--bg)}
-			.bar i{display:block;height:100%;border-right:2px solid var(--ink)}
-			.skill{display:flex;align-items:center;gap:.65rem;border:3px solid var(--ink);background:var(--bg);padding:.5rem .65rem;font-weight:700;box-shadow:3px 3px 0 var(--sh)}
-			.logo{flex:none;display:grid;place-items:center;width:2.25rem;height:2.25rem;border:2px solid #000;font-size:.8rem;font-weight:700;line-height:1}
-			.logo-img{flex:none;width:2.25rem;height:2.25rem;object-fit:contain}
-			.tags-warna .tag:nth-child(4n+2){background:var(--a2)}
-			.tags-warna .tag:nth-child(4n+3){background:var(--a3)}
-			.tags-warna .tag:nth-child(4n+4){background:var(--a4)}
-			a:focus-visible,button:focus-visible{outline:4px solid var(--a3);outline-offset:3px}
-			@keyframes pop{from{transform:scale(.92) rotate(-4deg);opacity:0}to{transform:none;opacity:1}}
-			.pop{animation:pop .5s ease-out both}
-			@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-		</style>
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+		<link rel="stylesheet" href="style.css">
 	</head>
-	<body class="antialiased">
+	<body>
 
-		<header class="sticky top-0 z-40 border-b-4" style="background:var(--a1);border-color:var(--ink);color:#000;padding-top:env(safe-area-inset-top,0px)">
-			<nav class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
-				<a href="#home" class="font-bold text-xl">Portfolio</a>
-				<div class="hidden md:flex gap-5 font-bold">
-					<a href="#tentang" class="hover:underline">Tentang</a>
-					<a href="#skill" class="hover:underline">Skill</a>
-					<a href="#proyek" class="hover:underline">Proyek</a>
-					<a href="#pengalaman" class="hover:underline">Pengalaman</a>
-					<a href="#kontak" class="hover:underline">Kontak</a>
+		<header class="header bg-a1">
+			<nav class="container nav-bar">
+				<a href="#home" class="logo-text">Portfolio</a>
+				<div class="nav-links">
+					<a href="#tentang">Tentang</a>
+					<a href="#skill">Skill</a>
+					<a href="#proyek">Proyek</a>
+					<a href="#pengalaman">Pengalaman</a>
+					<a href="#kontak">Kontak</a>
 				</div>
-				<button id="theme" class="nb-btn px-3 py-1 bg-white" aria-label="Ganti mode terang atau gelap"><span id="themeLabel">Mode Gelap</span></button>
+				<button id="theme" class="nb-btn btn-theme" aria-label="Ganti mode terang atau gelap">
+					<span id="themeLabel">Mode Gelap</span>
+				</button>
 			</nav>
 		</header>
 
-		<main class="max-w-5xl mx-auto px-4">
-
-			<section id="home" class="py-14 md:py-20 grid md:grid-cols-5 gap-8 items-center">
-				<div class="md:col-span-3">
-					<span class="tag" style="background:var(--a4)">Terbuka untuk magang dan bekerja</span>
-					<h1 class="mt-4 text-5xl md:text-7xl font-bold leading-[1.05]">Halo, saya <span class="px-2" style="background:var(--a2);color:#000">Daru Prasetiyo</span></h1>
-					<p class="mt-5 text-lg md:text-xl max-w-xl">Lulusan S1 Informatika yang tertarik di bidang web backend dan data.</p>
-					<div class="mt-7 flex flex-wrap gap-3">
-						<a href="#proyek" class="nb-btn px-5 py-3" style="background:var(--a3)">Lihat proyek</a>
-						<a href="https://drive.google.com/drive/folders/1oCgteTchdydPUdBtHWMReE5a2aRs6dzC?usp=drive_link" target="_blank" rel="noopener" class="nb-btn px-5 py-3" style="background:var(--a1)">Lihat CV</a>
+		<main class="container">
+			<section id="home" class="section hero">
+				<div class="hero-content">
+					<span class="tag bg-a4">Terbuka untuk magang dan bekerja</span>
+					<h1 class="hero-title">Halo, saya <span class="highlight bg-a2">Daru Prasetiyo</span></h1>
+					<p class="hero-desc">Lulusan S1 Informatika yang tertarik di bidang web backend dan data.</p>
+					<div class="btn-group">
+						<a href="#proyek" class="nb-btn btn-lg bg-a3">Lihat proyek</a>
+						<a href="https://drive.google.com/drive/folders/1oCgteTchdydPUdBtHWMReE5a2aRs6dzC?usp=drive_link" target="_blank" rel="noopener" class="nb-btn btn-lg bg-a1">Lihat CV</a>
 					</div>
 				</div>
 
-				<div class="md:col-span-2 pop">
-					<div class="nb p-4" style="background:var(--a3)">
-						<div class="p-3 text-sm font-mono border-[3px] border-black" style="background:#14121F;color:#6BCB77">
+				<div class="hero-visual pop">
+					<div class="nb terminal-card bg-a3">
+						<div class="terminal-screen">
 							<p>$ whoami</p><p class="text-white">daru</p>
 							<p class="mt-2">$ cat fokus.txt</p><p class="text-white">web, backend, excel</p>
 						</div>
-						<div class="mt-3 grid grid-cols-3 gap-2 text-center text-black font-bold">
-							<div class="border-2 border-black bg-white py-2"><div class="text-2xl">3.77</div><div class="text-xs">IPK</div></div>
-							<div class="border-2 border-black bg-white py-2"><div class="text-2xl">3</div><div class="text-xs">Proyek</div></div>
-							<div class="border-2 border-black bg-white py-2"><div class="text-2xl">5</div><div class="text-xs">Sertifikat</div></div>
+						<div class="stats-grid">
+							<div class="stat-box"><div class="stat-value">3.77</div><div class="stat-label">IPK</div></div>
+							<div class="stat-box"><div class="stat-value">3</div><div class="stat-label">Proyek</div></div>
+							<div class="stat-box"><div class="stat-value">5</div><div class="stat-label">Sertifikat</div></div>
 						</div>
 					</div>
 				</div>
 			</section>
 
-			<section id="tentang" class="py-10">
+			<section id="tentang" class="section">
 				<h2 class="h2">Tentang saya</h2>
-				<div class="mt-8 grid md:grid-cols-2 gap-6">
+				<div class="grid-2">
 					<div class="nb p-6">
 						<p class="leading-relaxed">
 							Lulusan S1 Informatika dengan IPK 3,77 dan predikat Cumlaude.
@@ -94,80 +65,127 @@
 							Terbiasa bekerja dalam tim lewat Git.
 						</p>
 					</div>
-					<div class="nb p-6" style="background:var(--a4);color:#000">
-						<h3 class="font-bold text-xl">Pendidikan</h3>
+					<div class="nb p-6 bg-a4 text-black">
+						<h3 class="title-lg">Pendidikan</h3>
 						<p class="mt-3 font-bold">S1 Informatika, Universitas Peradaban Bumiayu</p>
 						<p>2022 sampai 2026, IPK 3.77 / 4.00</p>
 					</div>
 				</div>
 			</section>
 
-			<section id="skill" class="py-10">
+			<section id="skill" class="section">
 				<h2 class="h2">Skill &amp; tech stack</h2>
-				<div class="nb mt-8 p-6">
-					<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-						<div class="skill"><span class="logo" style="background:#E34F26;color:#fff">5</span><span>HTML</span></div>
-						<div class="skill"><span class="logo" style="background:#1572B6;color:#fff">3</span><span>CSS</span></div>
-						<div class="skill"><span class="logo" style="background:#F7DF1E;color:#000">JS</span><span>JavaScript</span></div>
-						<div class="skill"><span class="logo" style="background:#3776AB;color:#fff">Py</span><span>Python</span></div>
-						<div class="skill"><span class="logo" style="background:#777BB4;color:#fff">php</span><span>PHP</span></div>
-						<div class="skill"><span class="logo" style="background:#ED8B00;color:#000">Jv</span><span>Java</span></div>
-						<div class="skill"><span class="logo" style="background:#F29111;color:#000">SQL</span><span>SQL</span></div>
-						<div class="skill"><span class="logo" style="background:#00758F;color:#fff">My</span><span>MySQL</span></div>
-						<div class="skill"><span class="logo" style="background:#336791;color:#fff">Pg</span><span>PostgreSQL</span></div>
-						<div class="skill"><span class="logo" style="background:#217346;color:#fff">X</span><span>Microsoft Excel</span></div>
-						<div class="skill"><span class="logo" style="background:#092E20;color:#fff">dj</span><span>Django</span></div>
-						<div class="skill"><span class="logo" style="background:#150458;color:#fff">Pd</span><span>Pandas</span></div>
-						<div class="skill"><span class="logo" style="background:#F05032;color:#fff">Git</span><span>Git &amp; GitHub</span></div>
-						<div class="skill"><span class="logo" style="background:#2496ED;color:#fff">Dk</span><span>Docker</span></div>
-						<div class="skill"><span class="logo" style="background:#FCC624;color:#000">Lx</span><span>Linux</span></div>
+				<div class="nb p-6 mt-8">
+					<div class="skill-grid">
+						<div class="skill">
+							<div class="logo-box-none"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML" class="skill-icon"></div>
+							<span>HTML</span>
+						</div>
+						<div class="skill">
+							<div class="logo-box-none"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS" class="skill-icon"></div>
+							<span>CSS</span>
+						</div>
+						<div class="skill">
+							<div class="logo-box-none"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" class="skill-icon"></div>
+							<span>JavaScript</span>
+						</div>
+						<div class="skill">
+							<div class="logo-box-none"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" class="skill-icon"></div>
+							<span>Python</span>
+						</div>
+						<div class="skill">
+							<div class="logo-box-none"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP" class="skill-icon"></div>
+							<span>PHP</span>
+						</div>
+						<div class="skill">
+							<div class="logo-box-none"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" class="skill-icon"></div>
+							<span>Java</span>
+						</div>
+						<div class="skill">
+							<div class="logo-box-none"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" alt="SQL" class="skill-icon"></div>
+							<span>SQL</span>
+						</div>
+						<div class="skill">
+							<div class="logo-box-none"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" alt="SQLite" class="skill-icon"></div>
+							<span>SQLite</span>
+						</div>
+						<div class="skill">
+							<div class="logo-box-none"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL" class="skill-icon"></div>
+							<span>MySQL</span>
+						</div>
+						<div class="skill">
+							<div class="logo-box-none"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="skill-icon"></div>
+							<span>PostgreSQL</span>
+						</div>
+						<div class="skill">
+							<div class="logo-box-white fallback-excel">X</div>
+							<span>Microsoft Excel</span>
+						</div>
+						<div class="skill">
+							<div class="logo-box-white"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg" alt="Django" class="skill-icon"></div>
+							<span>Django</span>
+						</div>
+						<div class="skill">
+							<div class="logo-box-none"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" class="skill-icon"></div>
+							<span>Git</span>
+						</div>
+						<div class="skill">
+							<div class="logo-box-white"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" class="skill-icon"></div>
+							<span>GitHub</span>
+						</div>
+						<div class="skill">
+							<div class="logo-box-none"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" class="skill-icon"></div>
+							<span>Docker</span>
+						</div>
+						<div class="skill">
+							<div class="logo-box-none"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux" class="skill-icon"></div>
+							<span>Linux</span>
+						</div>
 					</div>
 				</div>
 			</section>
 
-			<section id="proyek" class="py-10">
+			<section id="proyek" class="section">
 				<h2 class="h2">Project</h2>
-				<div class="mt-8 grid md:grid-cols-2 gap-6">
-
-					<article class="nb flex flex-col">
-						<div class="px-5 py-3 border-b-[3px] font-bold text-xl" style="background:var(--a1);border-color:var(--ink);color:#000">Kasir</div>
-						<div class="p-5 flex-1 flex flex-col">
+				<div class="grid-2">
+					<article class="nb card">
+						<div class="card-header bg-a1">Kasir</div>
+						<div class="card-body">
 							<p class="leading-relaxed">Sistem informasi kasir.</p>
-							<div class="mt-4 flex flex-wrap gap-2">
+							<div class="tag-group">
 								<span class="tag">React</span>
 								<span class="tag">Django</span>
 								<span class="tag">Tailwind</span>
 								<span class="tag">SQLite</span>
 							</div>
-							<div class="mt-auto pt-5 flex gap-3">
-								<a href="https://github.com/Ndaru7/kasirAsik" target="_blank" rel="noopener" class="nb-btn px-4 py-2 text-sm" style="background:var(--a4)">Kode</a>
+							<div class="card-footer">
+								<a href="https://github.com/Ndaru7/kasirAsik" target="_blank" rel="noopener" class="nb-btn btn-sm bg-a4">Kode</a>
 							</div>
 						</div>
 					</article>
 
-					<article class="nb flex flex-col">
-						<div class="px-5 py-3 border-b-[3px] font-bold text-xl" style="background:var(--a2);border-color:var(--ink);color:#000">Sistem Informasi Bimbingan Konseling</div>
-						<div class="p-5 flex-1 flex flex-col">
+					<article class="nb card">
+						<div class="card-header bg-a2">Sistem Informasi Bimbingan Konseling</div>
+						<div class="card-body">
 							<p class="leading-relaxed">Sistem informasi bimbingan konseling untuk pencatatan poin dan rekapitulasi pelanggaran tata tertib siswa.</p>
-							<div class="mt-4 flex flex-wrap gap-2">
+							<div class="tag-group">
 								<span class="tag">HTML</span>
 								<span class="tag">CSS</span>
 								<span class="tag">JavaScript</span>
 								<span class="tag">PHP</span>
 								<span class="tag">MySQL</span>
 							</div>
-							<div class="mt-auto pt-5 flex gap-3">
-								<a href="https://github.com/Ndaru7/counseling-system" target="_blank" rel="noopener" class="nb-btn px-4 py-2 text-sm" style="background:var(--a4)">Kode</a>
-								<!-- <a href="#" target="_blank" rel="noopener" class="nb-btn px-4 py-2 text-sm" style="background:var(--a3)">Demo</a> -->
+							<div class="card-footer">
+								<a href="https://github.com/Ndaru7/counseling-system" target="_blank" rel="noopener" class="nb-btn btn-sm bg-a4">Kode</a>
 							</div>
 						</div>
 					</article>
 
-					<article class="nb flex flex-col">
-						<div class="px-5 py-3 border-b-[3px] font-bold text-xl" style="background:var(--a4);border-color:var(--ink);color:#000">Model Klasifikasi Berita Hoaks</div>
-						<div class="p-5 flex-1 flex flex-col">
+					<article class="nb card">
+						<div class="card-header bg-a4">Model Klasifikasi Berita Hoaks</div>
+						<div class="card-body">
 							<p class="leading-relaxed">Klasifikasi konten hoaks berbahasa Indonesia menggunakan arsitektur transformer dengan pendekatan fact-checking.</p>
-							<div class="mt-4 flex flex-wrap gap-2">
+							<div class="tag-group">
 								<span class="tag">Python</span>
 								<span class="tag">Transformer</span>
 								<span class="tag">PyTorch</span>
@@ -177,21 +195,20 @@
 				</div>
 			</section>
 
-			<section id="pengalaman" class="py-10">
+			<section id="pengalaman" class="section">
 				<h2 class="h2">Pengalaman</h2>
-				<div class="mt-8 space-y-5">
-
-					<div class="nb p-5 flex gap-4 items-start">
-						<span class="tag shrink-0" style="background:var(--a1)">2025</span>
+				<div class="timeline">
+					<div class="nb timeline-item">
+						<span class="tag shrink-0 bg-a1">2025</span>
 						<div>
-							<h3 class="font-bold text-lg">Praktik Kerja Lapangan, PT Tanjung Mulia Informatika</h3>
+							<h3 class="title-lg">Praktik Kerja Lapangan, PT Tanjung Mulia Informatika</h3>
 							<p class="mt-1">Membangun sistem bimbingan konseling untuk pencatatan poin dan rekapitulasi tata tertib siswa</p>
 						</div>
 					</div>
 
-					<div class="nb p-5" style="background:var(--a1);color:#000">
-						<h3 class="font-bold text-lg mb-2">Sertifikat</h3>
-						<ul class="list-disc pl-5 space-y-1 font-bold">
+					<div class="nb p-5 bg-a1 text-black">
+						<h3 class="title-lg mb-2">Sertifikat</h3>
+						<ul class="cert-list">
 							<li>TOEFL</li>
 							<li>Webinar Nasional Cyber Security</li>
 							<li>Dicoding: Pemrograman C Dasar</li>
@@ -205,47 +222,23 @@
 				</div>
 			</section>
 
-			<section id="kontak" class="py-10 pb-16">
+			<section id="kontak" class="section pb-16">
 				<h2 class="h2">Kontak</h2>
-				<div class="nb mt-8 p-6 md:p-8" style="background:var(--a2);color:#000">
-					<p class="text-2xl md:text-3xl font-bold max-w-xl">Punya proyek, lowongan magang, atau ingin kolaborasi? Kirim pesan saja.</p>
-					<div class="mt-6 flex flex-wrap gap-3">
-						<a href="mailto:ndaruu.work9@gmail.com" class="nb-btn px-5 py-3 bg-white">ndaruu.work9@gmail.com</a>
-						<a href="https://github.com/Ndaru7" target="_blank" rel="noopener" class="nb-btn px-5 py-3" style="background:var(--a1)">GitHub</a>
-						<a href="#" target="_blank" rel="noopener" class="nb-btn px-5 py-3" style="background:var(--a3)">LinkedIn</a>
+				<div class="nb contact-card bg-a2 text-black">
+					<p class="contact-title">Punya proyek, lowongan magang, atau ingin kolaborasi? Kirim pesan saja.</p>
+					<div class="btn-group">
+						<a href="mailto:ndaruu.work9@gmail.com" class="nb-btn btn-lg bg-white">ndaruu.work9@gmail.com</a>
+						<a href="https://github.com/Ndaru7" target="_blank" rel="noopener" class="nb-btn btn-lg bg-a1">GitHub</a>
+						<a href="https://www.linkedin.com/in/daru-prasetiyo-114b9843b/" target="_blank" rel="noopener" class="nb-btn btn-lg bg-a3">LinkedIn</a>
 					</div>
 				</div>
 			</section>
 		</main>
 
-		<footer class="border-t-4 py-6 text-center font-bold" style="border-color:var(--ink);background:var(--card)">
+		<footer class="footer">
 			&copy; 2026 Daru Prasetiyo.
 		</footer>
 
-		<script>
-			const root = document.documentElement;
-			const label = document.getElementById('themeLabel');
-
-			function isDark() {
-				if (root.dataset.theme) return root.dataset.theme === 'dark';
-				return matchMedia('(prefers-color-scheme: dark)').matches;
-			}
-			function updateLabel() {
-				label.textContent = isDark() ? 'Dark Mode' : 'Light Mode';
-			}
-
-			try {
-				const saved = localStorage.getItem('theme');
-				if (saved) root.dataset.theme = saved;
-			} catch (e) {}
-			updateLabel();
-
-			document.getElementById('theme').addEventListener('click', () => {
-				const next = isDark() ? 'light' : 'dark';
-				root.dataset.theme = next;
-				try { localStorage.setItem('theme', next); } catch (e) {}
-				updateLabel();
-			});
-		</script>
+		<script src="main.js"></script>
 	</body>
 </html>
