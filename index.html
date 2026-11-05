@@ -15,7 +15,7 @@
 			box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 			@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14121F;--card:#221F33;--ink:#F5F5F5;--sh:#F5F5F5}}
 			:root[data-theme="dark"]{--bg:#14121F;--card:#221F33;--ink:#F5F5F5;--sh:#F5F5F5}
-      
+
 			html{scroll-behavior:smooth;scroll-padding-top:5rem}
 			body{background:var(--bg);color:var(--ink);font-family:'Space Grotesk',system-ui,sans-serif;transition:background .2s,color .2s}
 			.nb{background:var(--card);border:3px solid var(--ink);box-shadow:6px 6px 0 var(--sh)}
@@ -231,7 +231,7 @@
 				return matchMedia('(prefers-color-scheme: dark)').matches;
 			}
 			function updateLabel() {
-				label.textContent = isDark() ? 'Mode Terang' : 'Mode Gelap';
+				label.textContent = isDark() ? 'Dark Mode' : 'Light Mode';
 			}
 
 			try {
